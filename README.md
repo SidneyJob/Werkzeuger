@@ -12,7 +12,7 @@ Read more about generating pin in my article: LINK
 4) cgroup
 
 
-**Example options:**
+**Example values for some options:**
 ```
 username: user
 path: /home/user/.local/lib/python3.11/site-packages/flask/app.py
@@ -44,5 +44,5 @@ If you are doing these steps on your machine, then you can use the GET command t
 ![Screenshot](https://github.com/SidneyJob/Generate-flask-pin/blob/main/img/get.png)
 
 
-Follow me on my channel: https://t.me/SidneyJobChannel
-If you have any questions, then write to me by mail SidneyJob13@gmail.com or telegram @SidneyJob
+#### Follow me on my channel: https://t.me/SidneyJobChannel
+#### If you have any questions, then write to me by mail SidneyJob13@gmail.com or telegram @SidneyJob
