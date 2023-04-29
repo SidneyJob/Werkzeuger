@@ -79,12 +79,13 @@ def generate_cookie(pin):
 
 
 def main():
-    if sys.argv[1] == "GET":
-        with open('/etc/machine-id','r') as f:
-            mch_id = f.readline()[:-1]
-        with open("/proc/self/cgroup",'r') as f:
-            cgroup = f.readline()[:-1]
-        print(f"""  
+    if len(sys.argv) > 1:
+        if sys.argv[1] == "GET":
+            with open('/etc/machine-id','r') as f:
+                mch_id = f.readline()[:-1]
+            with open("/proc/self/cgroup",'r') as f:
+                cgroup = f.readline()[:-1]
+            print(f"""  
 Public bits:
 username         === {getpass.getuser()}
 
@@ -93,7 +94,7 @@ MAC              === {str(uuid.getnode())}
 machine_id       === {mch_id}
 cgroup           === {cgroup}
 """)
-        exit(0)
+            exit(0)
 
     parser = argparse.ArgumentParser(description="Werkzeug generate PIN script")
 
