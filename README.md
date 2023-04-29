@@ -1,7 +1,7 @@
 The script was written to generate a debug flask PIN and cookie. If you have any questions, then write to me by mail SidneyJob13@gmail.com or telegram @SidneyJob
 
 
-1[Screenshot](https://github.com/SidneyJob/Generate-flask-pin/blob/main/img/help.png)
+![Screenshot](https://github.com/SidneyJob/Generate-flask-pin/blob/main/img/help.png)
 
 Required options:
 1) Path
