@@ -1,16 +1,19 @@
-The script was written to generate a debug flask PIN and cookie. If you have any questions, then write to me by mail SidneyJob13@gmail.com or telegram @SidneyJob
+# Werkzeuger
 
+The script was written to generate a debug pin and correct cookie for flask applications based on Werkzeug. 
+Read more about generating pin in my article: LINK
 
 ![Screenshot](https://github.com/SidneyJob/Generate-flask-pin/blob/main/img/help.png)
 
-Required options:
+**Required options:**
 1) Path
 2) MAC 
 3) Machine ID 
 4) cgroup
 
+
+**Example options:**
 ```
-Example options:
 username: user
 path: /home/user/.local/lib/python3.11/site-packages/flask/app.py
 mac: fc:44:82:9d:ba:02
@@ -20,7 +23,8 @@ modname: flask.app
 appname: Flask
 ```
 
-> You can see the list of available interests by reading the /proc/net/dev file. But the MAC address of an interface can be seen using the /sys/class/net/INT/address file, where INT is any interface.
+> You can see the list of available interfaces by reading the /proc/net/dev file. But the MAC address of an interface can be seen using the /sys/class/net/INT/address file, where INT is any interface.
+
 
 
 Example to use:
@@ -40,3 +44,5 @@ If you are doing these steps on your machine, then you can use the GET command t
 ![Screenshot](https://github.com/SidneyJob/Generate-flask-pin/blob/main/img/get.png)
 
 
+Follow me on my channel: https://t.me/SidneyJobChannel
+If you have any questions, then write to me by mail SidneyJob13@gmail.com or telegram @SidneyJob
