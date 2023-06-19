@@ -165,8 +165,8 @@ cgroup           === {cgroup}
 
 
     parser.add_argument("--mac", dest="mac", required=True, type=str, help="MAC address any interface") # REQUIRED
-    parser.add_argument("--machine_id", dest="mch_id",required=True, type=str, help="Enter /etc/machine-id") # REQUIRED
-    parser.add_argument("--cgroup", dest="cgroup",required=True, type=str, help="Enter /proc/self/cgroup or /proc/sys/kernel/random/boot_id") # REQUIRED
+    parser.add_argument("--machine_id", dest="mch_id",required=True, type=str, help="Enter /etc/machine-id or /proc/sys/kernel/random/boot_id") # REQUIRED
+    parser.add_argument("--cgroup", dest="cgroup",required=True, type=str, help="Enter /proc/self/cgroup") # REQUIRED
     
     args = parser.parse_args()
 
