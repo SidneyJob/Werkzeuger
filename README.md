@@ -1,8 +1,8 @@
 # Werkzeuger
 
 ## RU
-Werkzeuger может генерировать дебаг пин и куку для входа в консоль Werkzeug
-Подробнее о генерации пин читайте в моей статье: [Ссылка](https://habr.com/ru/articles/738238/)
+- Werkzeuger может генерировать дебаг пин и куку для входа в консоль Werkzeug
+- Подробнее о генерации пин читайте в моей статье: [Ссылка](https://habr.com/ru/articles/738238/)
 
 ![Screenshot](https://github.com/SidneyJob/Generate-flask-pin/blob/main/img/help.png)
 
@@ -59,8 +59,8 @@ appname: Flask
 
 
 ## EN
-Werkzeuger can generate a debug pin and a cookie to enter the Werkzeug debug console
-Read more about generating pin in my article: [Link](https://habr.com/ru/articles/738238/)
+- Werkzeuger can generate a debug pin and a cookie to enter the Werkzeug debug console
+- Read more about generating pin in my article: [Link](https://habr.com/ru/articles/738238/)
 
 ![Screenshot](https://github.com/SidneyJob/Werkzeuger/blob/main/img/help.png)
 
